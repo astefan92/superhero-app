@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Sign In
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="4"></ion-col>
+            <ion-col size="4">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event, loginForm.value)">
+                    <ion-input type="text" [formControl]="email" placeholder="Email"></ion-input>
+                    <ion-input type="password" [formControl]="password" placeholder="Password"></ion-input>
+                    <ion-button type="submit" color="primary">Submit</ion-button>
+                </form>
+            </ion-col>
+            <ion-col size="4"></ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
