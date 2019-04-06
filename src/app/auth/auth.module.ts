@@ -5,7 +5,6 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
-import { AuthRoutingModule } from './auth-routing.module';
 import { AuthService } from './auth.service';
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '../shared/shared.module';
