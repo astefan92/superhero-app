@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'list',
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ListPageComponent implements OnInit {
-  constructor() { }
+  constructor(private router: Router) { }
   ngOnInit() { }
+
+  navigateToDetail() {
+    this.router.navigate(['/menu/list/1']);
+  }
 }

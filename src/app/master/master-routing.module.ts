@@ -6,17 +6,28 @@ import {
 import { ListPageComponent } from './list/list.page';
 import { DetailPageComponent } from './detail/detail.page';
 import { AuthGuard } from '../shared/guards/auth.guard';
+import { MenuPageComponent } from './menu/menu.page';
 
 const masterRoutes: Routes = [
   {
-    path: '',
-    component: ListPageComponent,
-    canActivate: [AuthGuard]
+    path: 'menu',
+    component: MenuPageComponent,
+    children: [
+      {
+        path: 'list',
+        component: ListPageComponent,
+      },
+      {
+        path: 'list/:id',
+        component: DetailPageComponent,
+      },
+    ],
+    canActivate: [AuthGuard],
   },
   {
-    path: '/:id',
-    component: DetailPageComponent
-  },
+    path: '',
+    redirectTo: '/menu'
+  }
 ];
 
 @NgModule({

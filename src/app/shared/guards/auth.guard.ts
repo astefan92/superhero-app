@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
             return true;
         }
 
-        this.router.navigate(['/signin'], { queryParams: { returnUrl: state.url }});
+        this.router.navigate(['/signin']);
         return false;
     }
 }

@@ -1,0 +1,17 @@
+.sign-in-grid {
+    height: 100%;
+
+    .sign-in-row {
+        height: 100%;
+        align-items: center;
+
+        .title {
+            padding-left: 0;
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+        }
+    }
+}
