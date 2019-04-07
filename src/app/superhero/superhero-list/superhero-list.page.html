@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Superhero List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let superhero of superheroes" size-md="6" size-xs="12">
+        <ion-card class="superhero-card" (click)="navigateToDetail(superhero)">
+          <ion-item>
+            <ion-avatar item-start class="superhero-avatar">
+              <img [src]="getThumbnailUrl(superhero.thumbnail)">
+            </ion-avatar>
+            <h2 text-capitalize>{{superhero.name}}</h2>
+          </ion-item>
+          <ion-card-content>
+            {{superhero.description ? superhero.description : 'No description available at the moment'}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -3,23 +3,23 @@ import {
   RouterModule,
   Routes
 } from '@angular/router';
-import { ListPageComponent } from './list/list.page';
-import { DetailPageComponent } from './detail/detail.page';
+import { SuperheroListPageComponent } from './superhero-list/superhero-list.page';
+import { SuperheroDetailPageComponent } from './superhero-detail/superhero-detail.page';
 import { AuthGuard } from '../shared/guards/auth.guard';
 import { MenuPageComponent } from './menu/menu.page';
 
-const masterRoutes: Routes = [
+const superheroRoutes: Routes = [
   {
     path: 'menu',
     component: MenuPageComponent,
     children: [
       {
         path: 'list',
-        component: ListPageComponent,
+        component: SuperheroListPageComponent,
       },
       {
         path: 'list/:id',
-        component: DetailPageComponent,
+        component: SuperheroDetailPageComponent,
       },
     ],
     canActivate: [AuthGuard],
@@ -32,10 +32,10 @@ const masterRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(masterRoutes)
+    RouterModule.forChild(superheroRoutes)
   ],
   exports: [
     RouterModule
   ]
 })
-export class MasterRoutingModule { }
+export class SuperheroRoutingModule { }

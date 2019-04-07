@@ -19,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     AuthModule,
+    SharedModule,
   ],
   providers: [
     StatusBar,

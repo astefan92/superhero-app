@@ -4,7 +4,7 @@ import { SigninPageComponent } from './auth/signin/signin.page';
 
 const routes: Routes = [
   { path: 'signin', component: SigninPageComponent },
-  { path: '', loadChildren: './master/master.module#MasterModule' }
+  { path: '', loadChildren: './superhero/superhero.module#SuperheroModule' }
 ];
 @NgModule({
   imports: [
