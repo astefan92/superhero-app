@@ -18,11 +18,14 @@ export class SuperheroDetailPageComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const superheroId = params.get('id');
       this.superhero = this.superheroApiService.getSuperhero(Number.parseInt(superheroId, 10));
-      console.log(this.superhero);
     });
   }
 
   getThumbnailUrl(thumbnail: any) {
+    if (!thumbnail) {
+      return '';
+    }
+
     return thumbnail.path + '/landscape_incredible.jpg';
   }
 

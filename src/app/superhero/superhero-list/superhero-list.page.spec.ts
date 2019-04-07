@@ -1,7 +1,11 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SuperheroListPageComponent } from './superhero-list.page';
+
+import { SuperheroApiService } from '../superhero-api.service';
 
 describe('ListComponent', () => {
   let component: SuperheroListPageComponent;
@@ -10,6 +14,8 @@ describe('ListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SuperheroListPageComponent ],
+      imports: [RouterTestingModule.withRoutes([]), HttpClientModule],
+      providers: [SuperheroApiService],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();

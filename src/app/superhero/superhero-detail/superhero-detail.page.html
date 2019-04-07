@@ -11,19 +11,19 @@
 
 <ion-content padding>
   <ion-card class="superhero-card" (click)="navigateToDetail(superhero)">
-    <img [src]="getThumbnailUrl(superhero.thumbnail)">
+    <img [src]="getThumbnailUrl(superhero?.thumbnail)">
     <ion-card-header>
-      <h1>{{superhero.name}}</h1>
+      <h1>{{superhero?.name}}</h1>
     </ion-card-header>
     <ion-card-content>
-      <p>{{superhero.description ? superhero.description : 'No description available at the moment'}}</p>
+      <p>{{superhero?.description ? superhero.description : 'No description available at the moment'}}</p>
 
       <ion-list>
         <ion-list-header>
           <p class="comic-list-title">Comics:</p>
         </ion-list-header>
         <ion-item *ngFor="let comic of superhero?.comics.items">
-          <ion-label>{{comic.name}}</ion-label>
+          <ion-label>{{comic?.name}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
